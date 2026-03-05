@@ -1,0 +1,176 @@
+.parallel-viewer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.viewer-header {
+  display: flex;
+  background-color: #f5f5f5;
+  border-bottom: 2px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.column-title {
+  flex: 1;
+  padding: 16px;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.index-title {
+  flex: 0 0 60px;
+  /* Fixed width for index */
+  text-align: center;
+  border-right: 1px solid #ddd;
+}
+
+.oare-id-title {
+  flex: 0 0 120px;
+  /* Fixed width for ID, slightly wider */
+  text-align: center;
+  border-right: 1px solid #ddd;
+}
+
+.viewer-content {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.row-pair {
+  display: flex;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.row-pair:last-child {
+  border-bottom: none;
+}
+
+.row-pair:hover {
+  background-color: #f9fbfd;
+}
+
+.column {
+  flex: 1;
+  padding: 16px;
+  line-height: 1.6;
+  font-size: 1rem;
+  overflow-wrap: break-word;
+  /* Ensure long words break */
+  word-break: break-word;
+}
+
+.index-column {
+  flex: 0 0 60px;
+  /* Fixed width matching title */
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+  border-right: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+  user-select: none;
+  position: relative;
+}
+
+.oare-id-column {
+  flex: 0 0 120px;
+  text-align: center;
+  color: #555;
+  font-size: 0.8rem;
+  border-right: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis; */
+  /* white-space: nowrap; */
+  word-break: break-all;
+  padding: 8px;
+}
+
+.length-column {
+  flex: 0 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: #888;
+  background-color: #fafafa;
+  border-left: 1px solid #f0f0f0;
+  user-select: none;
+}
+
+.edit-indicator {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #27ae60;
+  font-size: 1.5rem;
+  line-height: 0;
+}
+
+.edited-row {
+  background-color: #f0fff4;
+  /* Light green background for edited rows */
+}
+
+.edited-row .index-column {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.cell-editor {
+  width: 100%;
+  /* Height is controlled by JS now */
+  border: none;
+  /* transparent border */
+  resize: none;
+  /* Disable manual resize as it's auto now */
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0;
+  outline: none;
+}
+
+.cell-editor:focus {
+  background-color: #fff;
+  box-shadow: inset 0 0 0 2px #3498db;
+}
+
+.transliteration {
+  border-right: 1px solid #f0f0f0;
+  font-family: 'Courier New', Courier, monospace;
+  /* Monospace often nice for transliteration */
+  color: #2c3e50;
+}
+
+.translation {
+  color: #34495e;
+}
+
+.empty-cell {
+  color: #aaa;
+  font-style: italic;
+}
